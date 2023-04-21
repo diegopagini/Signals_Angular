@@ -1,4 +1,4 @@
-# Signals
+*** Signals ***
 
 ### count.component.html
 
