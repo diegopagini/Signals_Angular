@@ -1,4 +1,4 @@
-# Signals
+*** Signals ***
 
 ### app.component.html
 
