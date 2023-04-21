@@ -1,25 +1,13 @@
-import { CommonModule } from '@angular/common';
-import {
-  Component,
-  computed,
-  Signal,
-  signal,
-  WritableSignal,
-} from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+
+import { CountComponent } from './components/count/count.component';
 
 @Component({
   standalone: true,
-  imports: [CommonModule, MatButtonModule],
+  imports: [CountComponent],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent {
-  count: WritableSignal<number> = signal(0);
-  total: Signal<string> = computed(() => (this.count() >= 0 ? 'green' : 'red'));
-
-  increaseBy(num: number): void {
-    this.count.update((value: number) => (value += num));
-  }
-}
+export class AppComponent {}

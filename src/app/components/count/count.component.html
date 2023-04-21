@@ -1,0 +1,11 @@
+<div>
+  <span> Count: </span
+  ><strong [ngStyle]="{ color: total() }">{{ count() }}</strong>
+
+  <div class="container">
+    <button mat-raised-button color="primary" (click)="increaseBy(1)">
+      +1
+    </button>
+    <button mat-raised-button color="warn" (click)="increaseBy(-1)">-1</button>
+  </div>
+</div>

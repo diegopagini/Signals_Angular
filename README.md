@@ -1,11 +1,8 @@
 # Signals
 
-### app.component.html
+### count.component.html
 
 ```html
-<h1>Signals</h1>
-<hr />
-
 <div>
   <span> Count: </span><strong [ngStyle]="{ color: total() }">{{ count() }}</strong>
 
@@ -16,21 +13,22 @@
 </div>
 ```
 
-### app.component.ts
+### count.component.ts
 
 ```typescript
 import { CommonModule } from "@angular/common";
-import { Component, computed, Signal, signal, WritableSignal } from "@angular/core";
+import { ChangeDetectionStrategy, Component, computed, Signal, signal, WritableSignal } from "@angular/core";
 import { MatButtonModule } from "@angular/material/button";
 
 @Component({
+  selector: "app-count",
   standalone: true,
   imports: [CommonModule, MatButtonModule],
-  selector: "app-root",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.scss"],
+  templateUrl: "./count.component.html",
+  styleUrls: ["./count.component.scss"],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent {
+export class CountComponent {
   count: WritableSignal<number> = signal(0);
   total: Signal<string> = computed(() => (this.count() >= 0 ? "green" : "red"));
 
