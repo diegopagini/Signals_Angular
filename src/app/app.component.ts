@@ -17,9 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class AppComponent {
   count: WritableSignal<number> = signal(0);
-  total: Signal<string> = computed(() =>
-    this.count() >= 10 ? 'red' : 'green'
-  );
+  total: Signal<string> = computed(() => (this.count() >= 0 ? 'green' : 'red'));
 
   increaseBy(num: number): void {
     this.count.update((value: number) => (value += num));
