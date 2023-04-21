@@ -1,11 +1,27 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import {
+  Component,
+  computed,
+  Signal,
+  signal,
+  WritableSignal,
+} from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatButtonModule],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {}
+export class AppComponent {
+  count: WritableSignal<number> = signal(0);
+  total: Signal<string> = computed(() =>
+    this.count() >= 10 ? 'red' : 'green'
+  );
+
+  increaseBy(num: number): void {
+    this.count.update((value: number) => (value += num));
+  }
+}
