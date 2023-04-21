@@ -1,3 +1,11 @@
-<ul>
-  <li *ngFor="let hero of heroes()">{{ hero }}</li>
+<ul class="list">
+  <li
+    class="list__item"
+    *ngFor="let hero of heroes(); let odd = odd; let even = even"
+    [ngClass]="{ 'list__item--odd': odd, 'list__item--even': even }"
+  >
+    <strong>Name: {{ hero.name }}</strong>
+    <span>Age: {{ hero.age }}</span>
+    <span>Power: {{ hero.power }}</span>
+  </li>
 </ul>

@@ -1,0 +1,16 @@
+.list,
+.list__item {
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+
+  &--odd {
+    background-color: lightcoral;
+  }
+
+  &--even {
+    background-color: lightblue;
+  }
+}

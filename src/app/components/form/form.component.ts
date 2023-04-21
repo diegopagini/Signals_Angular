@@ -44,7 +44,9 @@ export class FormComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (this.form.valid) this._heroesService.addHero(this.form.value);
-    else this.form.markAllAsTouched();
+    if (this.form.valid) {
+      this._heroesService.addHero(this.form.value);
+      this.form.reset();
+    }
   }
 }
