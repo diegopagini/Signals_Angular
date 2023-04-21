@@ -1,0 +1,33 @@
+<form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <h2>Add Hero</h2>
+
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input formControlName="name" matInput placeholder="Name" type="text" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Age</mat-label>
+    <input
+      formControlName="age"
+      matInput
+      min="1"
+      placeholder="Age"
+      type="number"
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Power</mat-label>
+    <input
+      formControlName="power"
+      matInput
+      max="100"
+      min="1"
+      placeholder="Power"
+      type="number"
+    />
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">SUBMIT</button>
+</form>

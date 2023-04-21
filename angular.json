@@ -11,6 +11,9 @@
           "skipTests": true,
           "standalone": true,
           "style": "scss"
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
         }
       },
       "root": "",
